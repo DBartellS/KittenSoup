@@ -66,6 +66,16 @@ public class KittenSpider
 		}
 		return result;
 	}
+	/*
+	 * @return A string containing all HTML from a document
+	 */
+	public String getAllHTML() throws IOException
+	{
+		Document doc = Jsoup.connect(URL).get();
+		
+		String result = "";
+		return result;
+	}
 	
 	public String getURL() 
 	{
