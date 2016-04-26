@@ -1,11 +1,6 @@
 package com.spider.kittensoup;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Stack;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,7 +13,6 @@ public class Crawler
 {
 	//TODO: make the Crawler class a comprehensive web crawler, not just an HTML parser
 	private String URL;
-	private File text;
 	/*
 	 * @param the url you want to crawl
 	 */
@@ -35,9 +29,14 @@ public class Crawler
 		Stack result = new Stack();
 		Document doc = Jsoup.connect(URL).get();
 		Elements links = doc.select("a[href]");
+		String temp = "";
+		String temp2 = "";
 		for(Element link: links)
 		{
-			result.push(links);
+			 temp = "link : " + link.attr("href");  
+			 temp2 = "\ntext : " + link.text() + "\n";
+			 temp += temp2;
+			 result.push(temp);
 		}
 		return result;
 	}
@@ -49,10 +48,15 @@ public class Crawler
 		//TODO: possibly make this method return a string and format the string to be human readable
 		Stack result = new Stack();
 		Document doc = Jsoup.connect(URL).get();
-		Elements links = doc.select("[src]");
-		for(Element link: links)
+		Elements images =  doc.select("img[src~=(?i)\\.(png|jpe?g|gif)]");
+		String temp = "";
+		String temp2 = "";
+		for(Element image: images)
 		{
-			result.push(link);
+			 temp = "src : " + image.attr("src");  
+			 temp2 = "\nalt : " + image.attr("alt") + "\n";
+			 temp += temp2;
+			 result.push(temp);
 		}
 		return result;
 	}
@@ -83,7 +87,6 @@ public class Crawler
 	{
 		return URL;
 	}
-	
 	/*
 	 * @param the url you want to set as the KittenSpider object's URL
 	 */

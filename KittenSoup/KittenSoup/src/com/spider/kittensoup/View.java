@@ -18,7 +18,7 @@ public class View
 		boolean done = false;
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("***Welcome to Kitten Soup v.3!***");
+		System.out.println("***Welcome to Kitten Soup v0.3!***");
 		System.out.println("Written by Daniye S. Bartell - April 25, 2016");
 		System.out.println();
 		
@@ -31,15 +31,19 @@ public class View
 		CrawlWriter kw = new CrawlWriter(ks);
 		Stack links = ks.listLinks();
 		Stack media = ks.listMedia();
-		String linkString = ks.stackToString(links);
-		String mediaString = ks.stackToString(media);
-		System.out.println("The kitty brought you some info, look!");
+		System.out.println("\nThe kitty brought you some info, look!");
 		System.out.println("---Links---");
-		System.out.println(linkString);
+		while(!links.isEmpty())
+		{
+			System.out.println(links.pop());
+		}
 		System.out.println("-----------");
 		System.out.println();
 		System.out.println("---Media---");
-		System.out.println(mediaString);
+		while(!media.isEmpty())
+		{
+			System.out.println(media.pop());
+		}
 		System.out.println("-----------");
 		System.out.println();
 		System.out.println("Would you like to save it to a file? (yes/no)");
