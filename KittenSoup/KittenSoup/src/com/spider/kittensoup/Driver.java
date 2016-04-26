@@ -1,6 +1,7 @@
 package com.spider.kittensoup;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Stack;
 /*
  * @author Daniye S. Bartell
