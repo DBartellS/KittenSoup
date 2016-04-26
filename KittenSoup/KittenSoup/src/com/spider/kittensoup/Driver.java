@@ -1,11 +1,15 @@
 package com.spider.kittensoup;
 
 import java.io.IOException;
-
+/*
+ * @author Daniye S. Bartell
+ * @version 4/25/2016
+ */
 public class Driver 
 {
 	public static void main(String[] args)
 	{
+		//TODO: implement JavaFX (this won't happen for a while)
 		View v = new View();
 		
 		try 

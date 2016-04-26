@@ -16,6 +16,7 @@ import org.jsoup.select.Elements;
  */
 public class Crawler 
 {
+	//TODO: make the Crawler class a comprehensive web crawler, not just an HTML parser
 	private String URL;
 	private File text;
 	/*
@@ -30,6 +31,7 @@ public class Crawler
 	 */
 	public Stack listLinks() throws IOException
 	{
+		//TODO: possibly make this method return a string and format the string to be human readable
 		Stack result = new Stack();
 		Document doc = Jsoup.connect(URL).get();
 		Elements links = doc.select("a[href]");
@@ -44,6 +46,7 @@ public class Crawler
 	 */
 	public Stack listMedia() throws IOException
 	{
+		//TODO: possibly make this method return a string and format the string to be human readable
 		Stack result = new Stack();
 		Document doc = Jsoup.connect(URL).get();
 		Elements links = doc.select("[src]");

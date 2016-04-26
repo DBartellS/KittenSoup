@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Stack;
-
+/*
+ * @author Daniye S. Bartell
+ * @version 4/25/2016
+ */
 public class CrawlWriter 
 {
 	private Crawler crawl;
@@ -22,6 +25,7 @@ public class CrawlWriter
 	 */
 	public void writeLinks(String path)
 	{
+		//TODO: make the resulting .txt file human readable
 		try{
 		Stack links = crawl.listLinks();
 		String linkString = crawl.stackToString(links);
@@ -43,6 +47,7 @@ public class CrawlWriter
 	 */
 	public void writeMedia(String path)
 	{
+		//TODO: make the resulting .txt file human readable
 		try{
 			Stack media = crawl.listMedia();
 			String mediaString = crawl.stackToString(media);
@@ -64,6 +69,7 @@ public class CrawlWriter
 	 */
 	public void writeAll(String path)
 	{
+		//TODO: rename this method to something more descriptive
 		try
 		{
 			Stack media = crawl.listMedia();
@@ -90,4 +96,14 @@ public class CrawlWriter
 		}
 		catch(IOException e){e.printStackTrace();}
 	}
+	/*
+	 * Writes all HTML to a file
+	 * @param the path to write to
+	 */
+	public void writeAllHTML(String path)
+	{
+		//call getAllHTML() for a given page
+		//write the String to a .txt file of the given path
+	}
+	
 }

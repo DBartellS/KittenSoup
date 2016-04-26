@@ -3,9 +3,16 @@ package com.spider.kittensoup;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Stack;
-
+/*
+ * @author Daniye S. Bartell
+ * @version 4/25/2016
+ */
 public class View 
 {
+	/*
+	 * Runs the entire user interface, for now
+	 * Expected to be totally removed in the final version
+	 */
 	public void display() throws IOException
 	{
 		boolean done = false;
