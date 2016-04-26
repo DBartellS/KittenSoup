@@ -38,6 +38,7 @@ public class View
 		System.out.println("Would you like to save it to a file? (yes/no)");
 		String save = scan.nextLine();
 		if(save == "yes")
+		//TODO: Find out why this if statement defaults to 'else' despite user input
 		{
 			System.out.println("What is the path you would like to save the file to?");
 			String path = scan.nextLine();
@@ -50,6 +51,7 @@ public class View
 		System.out.println("Would you like to crawl again? (yes/no)");
 		String choice = scan.nextLine();
 		if(choice == "yes"){System.out.println("IT'S WEB SURFIN' TIME!");}
+		//TODO: Find out why this if statement defaults to 'else' despite user input
 		else if(choice == "no")
 		{System.out.println("Okay, bye bye!");
 		done = true;}

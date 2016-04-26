@@ -72,8 +72,7 @@ public class KittenSpider
 	public String getAllHTML() throws IOException
 	{
 		Document doc = Jsoup.connect(URL).get();
-		
-		String result = "";
+		String result = doc.toString();
 		return result;
 	}
 	
