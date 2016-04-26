@@ -1,6 +1,5 @@
 package com.spider.kittensoup;
 
-import java.io.File;
 import java.io.IOException;
 /*
  * @author Daniye S. Bartell
@@ -21,7 +20,5 @@ public class Driver
 		{
 			e.printStackTrace();
 		}
-		
 	}
-
 }

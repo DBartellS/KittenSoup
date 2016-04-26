@@ -1,5 +1,8 @@
 package com.spider.kittensoup;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Stack;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -83,6 +86,13 @@ public class Crawler
 		return result;
 	}
 	
+	public void goTo(String URL) throws IOException, URISyntaxException
+	{
+		if(Desktop.isDesktopSupported())
+		{
+			Desktop.getDesktop().browse(new URI(URL));
+		}
+	}
 	public String getURL() 
 	{
 		return URL;
