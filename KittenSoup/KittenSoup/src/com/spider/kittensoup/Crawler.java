@@ -14,14 +14,14 @@ import org.jsoup.select.Elements;
  * @author Daniye S. Bartell
  * @version 4/25/2016
  */
-public class KittenSpider 
+public class Crawler 
 {
 	private String URL;
 	private File text;
 	/*
 	 * @param the url you want to crawl
 	 */
-	public KittenSpider(String URL)
+	public Crawler(String URL)
 	{
 		this.URL = URL;
 	}

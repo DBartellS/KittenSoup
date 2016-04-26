@@ -6,16 +6,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Stack;
 
-public class KittenWriter 
+public class CrawlWriter 
 {
-	private KittenSpider ks;
+	private Crawler crawl;
 	private File text;
 	/*
 	 * @param The crawler you want to link to the writer
 	 */
-	public KittenWriter(KittenSpider ks)
+	public CrawlWriter(Crawler crawl)
 	{
-		this.ks = ks;
+		this.crawl = crawl;
 	}
 	/*
 	 * @param path you want to write to
@@ -23,8 +23,8 @@ public class KittenWriter
 	public void writeLinks(String path)
 	{
 		try{
-		Stack links = ks.listLinks();
-		String linkString = ks.stackToString(links);
+		Stack links = crawl.listLinks();
+		String linkString = crawl.stackToString(links);
 		text = new File(path);
 		if(!text.exists()){text.createNewFile();}
 		FileWriter fw = new FileWriter(text.getAbsoluteFile());
@@ -44,8 +44,8 @@ public class KittenWriter
 	public void writeMedia(String path)
 	{
 		try{
-			Stack media = ks.listMedia();
-			String mediaString = ks.stackToString(media);
+			Stack media = crawl.listMedia();
+			String mediaString = crawl.stackToString(media);
 			text = new File(path);
 			if(!text.exists()){text.createNewFile();}
 			FileWriter fw = new FileWriter(text.getAbsoluteFile());
@@ -66,10 +66,10 @@ public class KittenWriter
 	{
 		try
 		{
-			Stack media = ks.listMedia();
-			Stack links = ks.listLinks();
-			String mediaString = ks.stackToString(media);
-			String linkString = ks.stackToString(links);
+			Stack media = crawl.listMedia();
+			Stack links = crawl.listLinks();
+			String mediaString = crawl.stackToString(media);
+			String linkString = crawl.stackToString(links);
 			text = new File(path);
 			if(!text.exists()){text.createNewFile();}
 			FileWriter fw = new FileWriter(text.getAbsoluteFile());

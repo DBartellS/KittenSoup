@@ -20,8 +20,8 @@ public class View
 		System.out.println("(https://example.edu)");
 		String url = scan.nextLine();
 		System.out.println("Fetching information from " + url + "...");
-		KittenSpider ks = new KittenSpider(url);
-		KittenWriter kw = new KittenWriter(ks);
+		Crawler ks = new Crawler(url);
+		CrawlWriter kw = new CrawlWriter(ks);
 		Stack links = ks.listLinks();
 		Stack media = ks.listMedia();
 		String linkString = ks.stackToString(links);
