@@ -1,24 +1,23 @@
 package com.spider.kittensoup;
 
 import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
 /*
  * @author Daniye S. Bartell
  * @version 4/25/2016
  */
-public class Driver 
+public class Driver extends Application
 {
 	public static void main(String[] args) throws IOException
 	{
-		//TODO: implement JavaFX (this won't happen for a while)
-		View v = new View();
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage arg0) throws Exception 
+	{
 		
-		try 
-		{
-			v.display();
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
 	}
 }
