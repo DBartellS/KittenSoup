@@ -18,6 +18,7 @@ public class Driver extends Application
 		try {
 			AnchorPane root =(AnchorPane) FXMLLoader.load(Driver.class.getResource("SoupGUI.fxml"));
 			Scene scene = new Scene(root,640,480);
+			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
