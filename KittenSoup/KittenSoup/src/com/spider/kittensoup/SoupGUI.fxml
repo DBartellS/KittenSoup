@@ -16,7 +16,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <bottom>
-            <GridPane prefHeight="95.0" prefWidth="659.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="95.0" prefWidth="659.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -31,8 +31,11 @@
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </Button>
-                  <TextField id="htmlTextField" onInputMethodTextChanged="#pullHTML" text="https://">
+                  <TextField id="htmlTextField" onInputMethodTextChanged="#pullHTML" prefHeight="23.0" prefWidth="293.0" text="https://">
                      <font>
                         <Font name="Courier New" size="12.0" />
                      </font>
@@ -51,7 +54,7 @@
             </GridPane>
          </bottom>
          <top>
-            <Label text="Kitten Soup v0.5" BorderPane.alignment="CENTER">
+            <Label text="Simba Soup v0.5" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold" size="42.0" />
                </font>

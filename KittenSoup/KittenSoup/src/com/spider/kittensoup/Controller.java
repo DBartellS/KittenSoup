@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Stack;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -14,19 +15,30 @@ public class Controller
 	private Button linkButton,mediaButton;
 	private TextField htmlTextField;
 	private Hyperlink gitLink;
+	private Crawler crawl;
 	/*
 	 * Makes links show up in the htmlTextField
 	 */
-	public void pullLinks()
+	public <E> void pullLinks() throws IOException
 	{
-		System.out.println("Links");
+		crawl = new Crawler(htmlTextField.getText());
+		Stack<E> links = crawl.listLinks();
+		while(!links.isEmpty())
+		{
+			System.out.println(links.pop());
+		}
 	}
 	/*
 	 * Makes media elements show up in the htmlTextField
 	 */
-	public void pullMedia()
+	public <E> void pullMedia() throws IOException
 	{
-		System.out.println("Media");
+		crawl = new Crawler(htmlTextField.getText());
+		Stack<E> links = crawl.listMedia();
+		while(!links.isEmpty())
+		{
+			System.out.println(links.pop());
+		}
 	}
 	/*
 	 * Displays all html in the htmlTextField
