@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -15,7 +16,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <bottom>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane prefHeight="95.0" prefWidth="659.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -31,7 +32,7 @@
                         <Font name="Arial" size="12.0" />
                      </font>
                   </Button>
-                  <TextField id="htmlTextField" onInputMethodTextChanged="#pullHTML" promptText="https://">
+                  <TextField id="htmlTextField" onInputMethodTextChanged="#pullHTML" text="https://">
                      <font>
                         <Font name="Courier New" size="12.0" />
                      </font>
@@ -41,11 +42,16 @@
                         <Font name="Arial" size="12.0" />
                      </font>
                   </Button>
+                  <Hyperlink id="gitLink" onMouseClicked="#gotoGitHub" text="Here's a link to the project on GitHub!" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </Hyperlink>
                </children>
             </GridPane>
          </bottom>
          <top>
-            <Label text="Simba Soup v0.5" BorderPane.alignment="CENTER">
+            <Label text="Kitten Soup v0.5" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold" size="42.0" />
                </font>
@@ -55,10 +61,13 @@
             </Label>
          </top>
          <center>
-            <Label alignment="TOP_LEFT" prefHeight="283.0" prefWidth="337.0" text="&lt;Text Should Appear Here&gt;" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Label id="htmlTextField" alignment="TOP_LEFT" depthTest="DISABLE" prefHeight="283.0" prefWidth="386.0" text="&lt;Text Should Appear Here&gt;" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Consolas" size="12.0" />
                </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Label>
          </center>
       </BorderPane>
